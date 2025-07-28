@@ -7,7 +7,7 @@ npm i -g yarn
 if [ ! -f "~/koishi/koishi.yml" ]; then
     mkdir -p ~/koishi
     version=$(curl -Ls "https://api.github.com/repos/koishijs/boilerplate/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-    curl -L -o ~/boilerplate.zip https://mirror.ghproxy.com/https://github.com/koishijs/boilerplate/releases/download/${version}/boilerplate-${version}-linux-arm64-node20.zip
+    curl -L -o ~/boilerplate.zip https://github.com/koishijs/boilerplate/releases/download/${version}/boilerplate-${version}-linux-arm64-node20.zip
     unzip ~/boilerplate.zip -d ~/koishi
     rm ~/boilerplate.zip
     # 运行允许局域网访问
