@@ -170,6 +170,10 @@ function create_koishi_instance {
     clear
     echo "正在创建 Koishi 实例，请按照提示进行操作..."
 
+    if ! command -v node &> /dev/null; then
+        echo "请先安装依赖 nodejs-lts"
+        exit 1
+    fi
     yarn create koishi
 
     # 退出脚本，不再返回 UI
